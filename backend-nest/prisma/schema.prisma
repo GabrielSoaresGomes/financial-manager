@@ -90,7 +90,7 @@ model TransactionCategory {
   category    Category    @relation(fields: [categoryId], references: [id])
 
   @@id([transactionId, categoryId])
-  @@map("transaction_categories")
+  @@map("transactions_categories")
 
   @@index([transactionId])
   @@index([categoryId])

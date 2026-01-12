@@ -1,0 +1,66 @@
+import { User } from "../entities/user.entity";
+import { IUsersRepository } from "./users.repository";
+import {PrismaService} from "../../../infra/database/prisma/prisma.service";
+
+export class PrismaUsersRepository implements IUsersRepository {
+    constructor(private readonly prisma: PrismaService) {
+    }
+
+    async save(user: User): Promise<User> {
+        const record = await this.prisma.user.create({
+            data: {
+                name: user.name,
+                email: user.email,
+                passwordHash: user.passwordHash,
+                createdAt: user.createdAt,
+                updatedAt: user.updatedAt,
+                deletedAt: user.deletedAt,
+            }
+        });
+
+        return User.fromPersistence(record);
+    }
+
+    async findById(id: number): Promise<User> {
+        const record = await this.prisma.user.findUnique({
+            where: { id, deletedAt: null }
+        });
+        return User.fromPersistence(record);
+    }
+
+    async findByEmail(email: string): Promise<User> {
+        const record = await this.prisma.user.findUnique({
+            where: { email, deletedAt: null }
+        });
+        return User.fromPersistence(record);
+    }
+
+    async findAll(): Promise<User[]> {
+        const records = await this.prisma.user.findMany({
+            where: { deletedAt: null }
+        });
+        return records.map((record: User) => User.fromPersistence(record));
+    }
+
+    async update(user: User): Promise<User> {
+        const record = await this.prisma.user.update({
+            where: { id: user.id },
+            data: {
+                name: user.name,
+                email: user.email,
+                passwordHash: user.passwordHash,
+                createdAt: user.createdAt,
+                updatedAt: user.updatedAt,
+                deletedAt: user.deletedAt,
+            }
+        });
+        return User.fromPersistence(record);
+    }
+
+    async delete(id: number): Promise<void> {
+        await this.prisma.user.update({
+            where: { id },
+            data: { deletedAt: new Date() }
+        });
+    }
+}

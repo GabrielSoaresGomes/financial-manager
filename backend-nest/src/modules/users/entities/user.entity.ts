@@ -8,12 +8,12 @@ export interface PersistedUserProps extends CreateUserProps {
     id: number;
     createdAt: Date;
     updatedAt: Date;
-    deletedAt?: Date | null;
+    deletedAt: Date | null;
 }
 
 export class User {
     constructor(
-        public readonly id: number,
+        public readonly id: number | null,
         public name: string,
         public email: string,
         public passwordHash: string,
@@ -26,9 +26,9 @@ export class User {
     static createNew(props: CreateUserProps): User {
         const now = new Date();
         return new User(
-            0,
-            props.name,
-            props.email,
+            null,
+            props.name.trim(),
+            props.email.trim().toLowerCase(),
             props.passwordHash,
             now,
             now,
@@ -58,12 +58,12 @@ export class User {
     }
 
     changeEmail(newEmail: string) {
-        this.email = newEmail.toLowerCase();
+        this.email = newEmail.trim().toLowerCase();
         this.touch();
     }
 
     changePasswordHash(newPasswordHash: string) {
-        this.passwordHash = newPasswordHash.trim();
+        this.passwordHash = newPasswordHash;
         this.touch()
     }
 

@@ -13,6 +13,21 @@ datasource db {
   provider = "postgresql"
 }
 
+enum TransactionType {
+  INCOME
+  EXPENSE
+}
+
+enum PaymentMethod {
+  PIX
+  CREDIT_CARD
+  DEBIT_CARD
+  CASH
+  TRANSFER
+  CHECK
+  OTHER
+}
+
 model User {
   id           Int       @id @default(autoincrement())
   name         String
@@ -22,5 +37,62 @@ model User {
   updatedAt    DateTime  @updatedAt @map("updated_at")
   deletedAt    DateTime? @map("deleted_at")
 
+  categories   Category[]
+  transactions Transaction[]
+
   @@map("users")
+}
+
+model Category {
+  id          Int       @id @default(autoincrement())
+  userId      Int       @map("user_id")
+  description String
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+  deletedAt   DateTime? @map("deleted_at")
+
+  user User @relation(fields: [userId], references: [id])
+  transactions TransactionCategory[]
+
+  @@index([userId])
+  @@index([userId, description])
+  @@map("categories")
+}
+
+model Transaction {
+  id            Int       @id @default(autoincrement())
+  userId        Int       @map("user_id")
+  type          TransactionType
+  description   String
+  note          String?
+  amount        Decimal @db.Decimal(14, 2)
+  paymentMethod PaymentMethod @map("payment_method")
+  occurredAt    DateTime  @map("occurred_at")
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+  deletedAt     DateTime? @map("deleted_at")
+
+  user User @relation(fields: [userId], references: [id])
+  categories TransactionCategory[]
+
+  @@index([userId, occurredAt])
+  @@index([userId, type])
+  @@index([userId, description])
+  @@index([userId, amount])
+  @@index([userId, paymentMethod])
+  @@map("transactions")
+}
+
+model TransactionCategory {
+  transactionId Int @map("transaction_id")
+  categoryId    Int @map("category_id")
+
+  transaction Transaction @relation(fields: [transactionId], references: [id])
+  category    Category    @relation(fields: [categoryId], references: [id])
+
+  @@id([transactionId, categoryId])
+  @@map("transaction_categories")
+
+  @@index([transactionId])
+  @@index([categoryId])
 }

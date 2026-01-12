@@ -21,17 +21,27 @@ export class PrismaUsersRepository implements IUsersRepository {
         return User.fromPersistence(record);
     }
 
-    async findById(id: number): Promise<User> {
-        const record = await this.prisma.user.findUnique({
-            where: { id, deletedAt: null }
+    async findById(id: number): Promise<User | null> {
+        const record = await this.prisma.user.findFirst({
+            where: { id, deletedAt: null },
         });
+
+        if (!record) {
+            return null;
+        }
+
         return User.fromPersistence(record);
     }
 
-    async findByEmail(email: string): Promise<User> {
-        const record = await this.prisma.user.findUnique({
-            where: { email, deletedAt: null }
+    async findByEmail(email: string): Promise<User | null> {
+        const record = await this.prisma.user.findFirst({
+            where: { email, deletedAt: null },
         });
+
+        if (!record) {
+            return null;
+        }
+
         return User.fromPersistence(record);
     }
 
@@ -39,10 +49,18 @@ export class PrismaUsersRepository implements IUsersRepository {
         const records = await this.prisma.user.findMany({
             where: { deletedAt: null }
         });
-        return records.map((record: User) => User.fromPersistence(record));
+
+        if (records.length === 0) {
+            return [];
+        }
+
+        return records.map((record) => User.fromPersistence(record));
     }
 
-    async update(user: User): Promise<User> {
+    async update(user: User): Promise<User | null> {
+        if (user.id === null) {
+            return null;
+        }
         const record = await this.prisma.user.update({
             where: { id: user.id },
             data: {

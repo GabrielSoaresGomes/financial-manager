@@ -52,3 +52,17 @@ export const ApiGetUserByIdDocs = () => applyDecorators(
         description: 'Requisição inválida, ID inválido.',
     })
 );
+
+export const ApiUpdateUserDocs = () => applyDecorators(
+    ApiOperation({
+        summary: 'Atualizar usuário pelo ID informado',
+        description: 'Atualiza os detalhes de um usuário específico usando seu ID.'
+    }),
+    ApiOkResponse({
+        description: 'Usuário atualizado com sucesso.',
+        type: UserResponseDto
+    }),
+    ApiBadRequestResponse({
+        description: 'Requisição inválida, ID ou body inválido.',
+    })
+);

@@ -5,34 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9a39043-028a-4f3e-9d75-47eb4005144f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend-nest/src/infra/database/prisma/prisma.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-nest/src/infra/database/prisma/prisma.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-nest/src/modules/users/docs/users.swagger.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend-nest/src/modules/users/dto/user-response.dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.agent.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.ask.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.ask2agent.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.edit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/data_source_mapping.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/financial-manager.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-nest/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend-nest/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-nest/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/backend-nest/.prettierrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-nest/eslint.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/backend-nest/eslint.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-nest/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend-nest/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-nest/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend-nest/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-nest/src/app.controller.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-nest/src/app.controller.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-nest/src/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend-nest/src/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-nest/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend-nest/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-nest/src/modules/users/dto/update-user.dto.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-nest/src/modules/users/interfaces/update-user-input.interface.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend-nest/src/modules/users/presenters/user.presenter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-nest/prisma/migrations/20260112045549_init/migration.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-nest/prisma/migrations/migration_lock.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-nest/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/backend-nest/prisma/schema.prisma" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend-nest/src/modules/users/controllers/users.controller.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend-nest/src/modules/users/controllers/users.controller.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend-nest/src/modules/users/users.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend-nest/src/modules/users/users.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infra/db/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-nest/src/modules/users/docs/users.swagger.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend-nest/src/modules/users/docs/users.swagger.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-nest/src/modules/users/dto/create-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend-nest/src/modules/users/dto/create-user.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-nest/src/modules/users/dto/user-response.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend-nest/src/modules/users/dto/user-response.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-nest/src/modules/users/entities/user.entity.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend-nest/src/modules/users/entities/user.entity.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-nest/src/modules/users/repositories/prisma-users.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend-nest/src/modules/users/repositories/prisma-users.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-nest/src/modules/users/repositories/users.repository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend-nest/src/modules/users/repositories/users.repository.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend-nest/src/modules/users/services/users.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/backend-nest/src/modules/users/services/users.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,43 +42,70 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="36WcOyGkACMyUuNenjegccFwM8I" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/gabri/OneDrive/Documentos/financial-manager/infra/db",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\gabri\\OneDrive\\Documentos\\financial-manager\\backend-nest\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
-    "ts.external.directory.path": "C:\\Users\\gabri\\OneDrive\\Documentos\\financial-manager\\backend-nest\\node_modules\\typescript\\lib"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.db.financial_manager_db: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/gabri/OneDrive/Documentos/financial-manager/backend-nest/src/modules/users/interfaces&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.Nest DEV.executor&quot;: &quot;Debug&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\gabri\\OneDrive\\Documentos\\financial-manager\\backend-nest\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\gabri\\OneDrive\\Documentos\\financial-manager\\backend-nest\\node_modules\\typescript\\lib&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\gabri\OneDrive\Documentos\financial-manager\backend-nest\src\modules\users\interfaces" />
+      <recent name="C:\Users\gabri\OneDrive\Documentos\financial-manager\backend-nest\src\modules\users\dto" />
       <recent name="C:\Users\gabri\OneDrive\Documentos\financial-manager\infra\db" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Docker.db.financial_manager_db: Compose Deployment">
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="db.financial_manager_db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="financial_manager_db" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="infra/db/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="Nest DEV" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/backend-nest/package.json" />
       <command value="run" />
@@ -100,6 +116,11 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.db.financial_manager_db: Compose Deployment" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -121,11 +142,27 @@
       <workItem from="1765230359833" duration="527000" />
       <workItem from="1765233029518" duration="4730000" />
       <workItem from="1768175135616" duration="319000" />
+      <workItem from="1768179306759" duration="14200000" />
+      <workItem from="1768222444370" duration="4305000" />
+      <workItem from="1768307643918" duration="607000" />
+      <workItem from="1768445912391" duration="1839000" />
+      <workItem from="1768501518231" duration="2241000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/backend-nest/src/modules/users/repositories/prisma-users.repository.ts</url>
+          <line>11</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

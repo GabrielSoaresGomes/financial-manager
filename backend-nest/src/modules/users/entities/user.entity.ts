@@ -7,7 +7,7 @@ export interface CreateUserProps {
 export interface PersistedUserProps extends CreateUserProps {
     id: number;
     createdAt: Date;
-    updatedAt: Date;
+    updatedAt: Date | null;
     deletedAt: Date | null;
 }
 
@@ -18,7 +18,7 @@ export class User {
         public email: string,
         public passwordHash: string,
         public readonly createdAt: Date,
-        public updatedAt: Date,
+        public updatedAt: Date | null = null,
         public deletedAt: Date | null = null
     ) {
     }
@@ -30,9 +30,7 @@ export class User {
             props.name.trim(),
             props.email.trim().toLowerCase(),
             props.passwordHash,
-            now,
-            now,
-            null
+            now
         );
     }
 
@@ -43,7 +41,7 @@ export class User {
             props.email,
             props.passwordHash,
             props.createdAt,
-            props.updatedAt,
+            props.updatedAt ?? null,
             props.deletedAt ?? null,
         );
     }

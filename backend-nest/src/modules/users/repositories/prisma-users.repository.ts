@@ -32,18 +32,6 @@ export class PrismaUsersRepository implements IUsersRepository {
         return User.fromPersistence(record);
     }
 
-    async findByEmail(email: string): Promise<User | null> {
-        const record = await this.prisma.user.findFirst({
-            where: { email, deletedAt: null },
-        });
-
-        if (!record) {
-            return null;
-        }
-
-        return User.fromPersistence(record);
-    }
-
     async findAll(): Promise<User[]> {
         const records = await this.prisma.user.findMany({
             where: { deletedAt: null }
@@ -64,11 +52,7 @@ export class PrismaUsersRepository implements IUsersRepository {
             where: { id: user.id },
             data: {
                 name: user.name,
-                email: user.email,
-                passwordHash: user.passwordHash,
-                createdAt: user.createdAt,
-                updatedAt: user.updatedAt,
-                deletedAt: user.deletedAt,
+                passwordHash: user.passwordHash
             }
         });
         return User.fromPersistence(record);

@@ -4,7 +4,7 @@ import {IsNotEmpty} from "class-validator";
 export class UserResponseDto {
     @ApiProperty()
     @IsNotEmpty()
-    id: string;
+    id: number;
 
     @ApiProperty()
     @IsNotEmpty()
